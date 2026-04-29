@@ -36,8 +36,7 @@ public class Category {
     @JsonIgnore
     private Set<Product> products;
 
-    public Category(String name, Set<Product> products) {
+    public Category(String name) {
         this.name = name;
-        this.products = products;
     }
 }
