@@ -10,15 +10,15 @@ import java.util.Set;
 @Getter
 @Setter
 @NoArgsConstructor
-@ToString
+@ToString(onlyExplicitlyIncluded = true)
 @Entity
 @Table(name = "categories")
 public class Category {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @ToString.Exclude
     private Long id;
 
+    @ToString.Include
     @Column(nullable = false, unique = true)
     @NotBlank
     private String name;
