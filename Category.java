@@ -14,6 +14,7 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.NotBlank;
+import java.util.HashSet;
 import java.util.Set;
 
 @Getter
@@ -34,7 +35,7 @@ public class Category {
 
     @OneToMany(mappedBy = "category")
     @JsonIgnore
-    private Set<Product> products;
+    private Set<Product> products = new HashSet<>();
 
     public Category(String name) {
         this.name = name;
