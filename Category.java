@@ -18,7 +18,6 @@ import java.util.HashSet;
 import java.util.Set;
 
 @Getter
-@Setter
 @NoArgsConstructor
 @ToString(onlyExplicitlyIncluded = true)
 @Entity
@@ -28,6 +27,7 @@ public class Category {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Setter
     @ToString.Include
     @Column(nullable = false, unique = true)
     @NotBlank
