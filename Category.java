@@ -19,7 +19,7 @@ public class Category {
     @ToString.Exclude
     private Long id;
 
-    @Column(unique = true)
+    @Column(nullable = false, unique = true)
     @NotBlank
     private String name;
 
