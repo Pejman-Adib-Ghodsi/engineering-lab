@@ -1,7 +1,7 @@
 package be.computershop.computershopapi.domain;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.sun.istack.NotNull;
+import javax.validation.constraints.NotNull;
 import lombok.*;
 
 import javax.persistence.*;
