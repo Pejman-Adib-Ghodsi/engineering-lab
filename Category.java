@@ -14,19 +14,21 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.NotBlank;
+import java.util.Collections;
 import java.util.HashSet;
 import java.util.Set;
 
-@Getter
 @NoArgsConstructor
 @ToString(onlyExplicitlyIncluded = true)
 @Entity
 @Table(name = "categories")
 public class Category {
+    @Getter
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Getter
     @Setter
     @ToString.Include
     @Column(nullable = false, unique = true)
@@ -39,5 +41,9 @@ public class Category {
 
     public Category(String name) {
         this.name = name;
+    }
+
+    public Set<Product> getProducts() {
+        return Collections.unmodifiableSet(products);
     }
 }
